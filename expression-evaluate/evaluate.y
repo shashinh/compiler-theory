@@ -20,6 +20,7 @@ start : expr NEWLINE {std::cout << "Expression value = " << $1 << "\n"; exit(1);
 expr  : expr '*' expr {$$ = $1 * $3;}
       | expr '+' expr {$$ = $1 + $3;}
       | expr '-' expr {$$ = $1 - $3;}
+      | '(' expr ')' {$$ = $2;}
       | DIGIT         {$$ = $1;}
       ;
 

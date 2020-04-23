@@ -15,6 +15,7 @@
 "+"     { return *yytext; }
 "-"     { return *yytext; }
 [\n]    { return NEWLINE; }
+[()]    { return *yytext; }
 
 %%
 
